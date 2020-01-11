@@ -1,4 +1,4 @@
-package com.urraan.hamzakhan.ecommerece;
+package com.urraan.hamzakhan.ecommerece.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -18,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 import com.urraan.hamzakhan.ecommerece.Models.ProductModel;
+import com.urraan.hamzakhan.ecommerece.R;
 import com.urraan.hamzakhan.ecommerece.ViewHolders.ProductViewHolder;
 import com.urraan.hamzakhan.ecommerece.ui.home.HomeViewModel;
 

@@ -1,4 +1,4 @@
-package com.urraan.hamzakhan.ecommerece;
+package com.urraan.hamzakhan.ecommerece.admin;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.urraan.hamzakhan.ecommerece.Models.CartModel;
+import com.urraan.hamzakhan.ecommerece.R;
 import com.urraan.hamzakhan.ecommerece.ViewHolders.CartViewHolder;
 
 import androidx.annotation.NonNull;

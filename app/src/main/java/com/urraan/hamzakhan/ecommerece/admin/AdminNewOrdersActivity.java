@@ -1,4 +1,4 @@
-package com.urraan.hamzakhan.ecommerece;
+package com.urraan.hamzakhan.ecommerece.admin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -20,6 +20,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.urraan.hamzakhan.ecommerece.Models.AdminOrdersModel;
+import com.urraan.hamzakhan.ecommerece.R;
 
 public class AdminNewOrdersActivity extends AppCompatActivity {
 
@@ -55,7 +56,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 String uid = getRef(i).getKey();
-                                Intent intent = new Intent(AdminNewOrdersActivity.this,AdminDisplayProductsActivity.class);
+                                Intent intent = new Intent(AdminNewOrdersActivity.this, AdminDisplayProductsActivity.class);
                                 intent.putExtra("uid",uid);
                                 startActivity(intent);
                             }

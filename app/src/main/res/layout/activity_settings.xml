@@ -88,4 +88,16 @@
         android:layout_margin="15dp"
         android:padding="10dp"
         />
+    <Button
+        android:id="@+id/settings_security_btn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Set Security Questions"
+        android:textColor="@android:color/white"
+        android:background="@drawable/buttons"
+        android:layout_below="@+id/settings_address"
+        android:layout_margin="15dp"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        />
 </RelativeLayout>

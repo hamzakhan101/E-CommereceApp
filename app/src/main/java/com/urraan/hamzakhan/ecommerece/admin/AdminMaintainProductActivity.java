@@ -1,4 +1,4 @@
-package com.urraan.hamzakhan.ecommerece;
+package com.urraan.hamzakhan.ecommerece.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+import com.urraan.hamzakhan.ecommerece.R;
 
 import java.util.HashMap;
 
@@ -61,7 +62,7 @@ public class AdminMaintainProductActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 Toast.makeText(AdminMaintainProductActivity.this, "Product Removed Successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(AdminMaintainProductActivity.this,AdminCategoryActivity.class);
+                Intent intent = new Intent(AdminMaintainProductActivity.this, AdminCategoryActivity.class);
                 startActivity(intent);
                 finish();
             }

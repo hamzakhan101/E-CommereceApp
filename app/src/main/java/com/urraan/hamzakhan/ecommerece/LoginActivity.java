@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.urraan.hamzakhan.ecommerece.Models.Users;
 import com.urraan.hamzakhan.ecommerece.Prevalent.Prevalent;
+import com.urraan.hamzakhan.ecommerece.admin.AdminCategoryActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingbar;
     private String ParentDbname = "Users";
     private CheckBox chkboxRememberMe;
-    private TextView adminLink,notAdminLink;
+    private TextView adminLink,notAdminLink,forgetPasswrodLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,15 @@ public class LoginActivity extends AppCompatActivity {
         chkboxRememberMe = findViewById(R.id.remember_me_chk);
         adminLink = findViewById(R.id.admin_panel_link);
         notAdminLink = findViewById(R.id.not_an_admin_link);
+        forgetPasswrodLink = findViewById(R.id.forget_password);
+        forgetPasswrodLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","login");
+                startActivity(intent);
+            }
+        });
         Paper.init(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (ParentDbname.equals("Admins")){
                                 Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                                 loadingbar.dismiss();
-                                Intent intent = new Intent(LoginActivity.this,AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
                             } else if (ParentDbname.equals("Users")) {
                                 Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();

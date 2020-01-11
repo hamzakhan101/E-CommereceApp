@@ -1,4 +1,4 @@
-package com.urraan.hamzakhan.ecommerece;
+package com.urraan.hamzakhan.ecommerece.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.urraan.hamzakhan.ecommerece.MainActivity;
+import com.urraan.hamzakhan.ecommerece.R;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
@@ -37,14 +40,14 @@ public class AdminCategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(AdminCategoryActivity.this,AdminProductsActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminProductsActivity.class);
                 startActivity(intent);
             }
         });
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this,MainActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
@@ -54,7 +57,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         btnCheckOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this,AdminNewOrdersActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrdersActivity.class);
                 startActivity(intent);
 
             }
@@ -62,7 +65,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         tshirts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category","tshirts");
                 startActivity(intent);
             }

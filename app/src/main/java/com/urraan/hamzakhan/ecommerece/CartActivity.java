@@ -2,6 +2,7 @@ package com.urraan.hamzakhan.ecommerece;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,14 @@ public class CartActivity extends AppCompatActivity {
         nextBtn = findViewById(R.id.btn_next_process);
         tvtotalPrice = findViewById(R.id.tv_total_price);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(CartActivity.this,HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

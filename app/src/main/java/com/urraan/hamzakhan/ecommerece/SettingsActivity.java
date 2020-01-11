@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,12 +32,14 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.urraan.hamzakhan.ecommerece.Prevalent.Prevalent;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private CircleImageView profileImageView;
     private EditText etFullName,etPhone,etAddress;
     private TextView tvCloseBtn, tvSaveBtn,tvProfileChangeBtn;
+    private Button securityQuestionsBtn;
     private Uri imageUri;
     private String myUrl = "";
     private StorageReference profileStorageRef;
@@ -53,12 +56,23 @@ public class SettingsActivity extends AppCompatActivity {
         tvCloseBtn = findViewById(R.id.close_settings_btn);
         tvSaveBtn = findViewById(R.id.update_settings_btn);
         tvProfileChangeBtn = findViewById(R.id.change_profile_image);
+        securityQuestionsBtn = findViewById(R.id.settings_security_btn);
+        securityQuestionsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","settings");
+                startActivity(intent);
+            }
+        });
         profileStorageRef = FirebaseStorage.getInstance().getReference().child("Profile pics");
 
         userInfoDisplay(profileImageView,etFullName,etPhone,etAddress);
         tvCloseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this,HomeActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -110,6 +124,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         startActivity(new Intent(SettingsActivity.this, MainActivity.class));
         Toast.makeText(SettingsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SettingsActivity.this,HomeActivity.class);
+        startActivity(intent);
         finish();
     }
 

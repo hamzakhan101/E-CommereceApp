@@ -47,6 +47,14 @@ public class SearchProductsActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SearchProductsActivity.this,HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Products");
